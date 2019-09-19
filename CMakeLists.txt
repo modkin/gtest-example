@@ -1,0 +1,8 @@
+cmake_minimum_required( VERSION 3.10 )
+project(gtestMinimal)
+set(CMAKE_CXX_STANDARD 11)
+find_package(GTest)
+add_library(facPrime facPrime.cc)
+add_executable(test Test.cc)
+target_include_directories(test PUBLIC ${GTEST_INCLUDE_DIR})
+target_link_libraries(test ${GTEST_LIBRARY} ${GTEST_MAIN_LIBRARY} facPrime)
