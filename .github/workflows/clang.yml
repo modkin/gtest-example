@@ -1,0 +1,23 @@
+name: GTest with clang
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: install
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install llvm-8
+    - name: cmake
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+    - name: test
+      run: |
+        cd build
+        ./testFacPrime
