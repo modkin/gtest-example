@@ -1,5 +1,6 @@
 #include <limits.h>
-#include "facPrime.h"
+#include "factorial.h"
+#include "prime.h"
 #include <gtest/gtest.h>
 namespace {
 // Tests Factorial().
@@ -25,7 +26,6 @@ TEST(FactorialTest, Positive) {
   EXPECT_EQ(6, Factorial(3));
   EXPECT_EQ(40320, Factorial(8));
 }
-
 
 // Tests IsPrime()
 
@@ -53,4 +53,6 @@ TEST(IsPrimeTest, Positive) {
   EXPECT_FALSE(IsPrime(6));
   EXPECT_TRUE(IsPrime(23));
 }
+
+
 }  // namespace
