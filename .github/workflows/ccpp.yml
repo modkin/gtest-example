@@ -14,7 +14,8 @@ jobs:
         mkdir build
         cd build
         cmake ..
-    - name: make
-      run: make
+        make
     - name: test
-      run: ./testFacPrime
+      run: |
+        cd build
+        ./testFacPrime
