@@ -10,13 +10,13 @@ jobs:
     - name: install
       run: |
         sudo apt-get update
-        sudo apt-get -y install llvm-8
+        sudo apt-get -y install clang-8
     - name: cmake
       run: |
         mkdir build
         cd build
-        export CC=clang-8.0
-        export CXX=clang++-8.0
+        export CC=clang-8
+        export CXX=clang++-8
         cmake ..
         make
     - name: test
